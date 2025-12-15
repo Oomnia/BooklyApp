@@ -1,6 +1,10 @@
+import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/Utils/assets.dart';
+import 'package:bookly_app/features/splash/presentation/view_models/views/home/presentation/views/home_view.dart';
+import 'package:bookly_app/features/splash/presentation/view_models/views/widgets/sliding_text.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/route_manager.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -15,18 +19,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
   late Animation<Offset> textAnimation;
   @override
   void initState() {
-    animationController = AnimationController(
-      vsync: this,
-      duration: Duration(seconds: 2),
-    );
-
-    textAnimation = Tween<Offset>(
-      begin: Offset(-2, 0),
-      end: Offset(0, 0),
-    ).animate(animationController);
-    animationController.forward();
     super.initState();
+    initTextAnimation();
+    navigateToHome();
   }
+
+ 
 
   @override
   void dispose() {
@@ -42,15 +40,27 @@ class _SplashViewBodyState extends State<SplashViewBody>
       children: [
         Image.asset(AssetsData.logo, height: 90, width: 90),
         Gap(10),
-        SlideTransition(
-          position: textAnimation,
-          child: Text(
-            'Read Free Books',
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 20),
-          ),
-        ),
+        SlidingText(textAnimation: textAnimation),
       ],
     );
+  }
+
+  void initTextAnimation() {
+    animationController = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 2),
+    );
+
+    textAnimation = Tween<Offset>(
+      begin: Offset(-2, 0),
+      end: Offset(0, 0),
+    ).animate(animationController);
+    animationController.forward();
+    super.initState();
+  }
+  void navigateToHome() {
+     Future.delayed(const Duration(seconds: 3), () {
+    Get.to(() => const HomeView(),transition: Transition.fade,duration:kDuration);
+  });
   }
 }
