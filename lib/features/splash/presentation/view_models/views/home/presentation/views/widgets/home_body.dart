@@ -18,7 +18,7 @@ class HomeBody extends StatelessWidget {
           CustomAppbar(),
           BooksListview(),
           Gap(50),
-          Text('Best Seller', style: Styles.headText),
+          Text('Best Seller', style: Styles.textStyle18),
           Gap(10),
           BestsellerItem(),
         ],
