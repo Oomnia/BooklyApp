@@ -11,7 +11,7 @@ class HomeBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -19,7 +19,7 @@ class HomeBody extends StatelessWidget {
           BooksListview(),
           Gap(50),
           Text('Best Seller', style: Styles.textStyle18),
-          Gap(10),
+          Gap(20),
           BestsellerItem(),
         ],
       ),
