@@ -10,45 +10,50 @@ class BestsellerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 140,
-      child: Row(
-        children: [
-          AspectRatio(
-            aspectRatio: 3 / 3.7,
-            child: Image.asset(AssetsData.testImage),
-          ),
-          Gap(20),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'The Jungle Book',
-                  style: Styles.textStyle120.copyWith(fontFamily: kSectrafine),
-                ),
-                Gap(3),
-                Text(
-                  'Rudyard Kipling',
-                  style: Styles.textStyle114.copyWith(color: Colors.grey),
-                ),
-                Gap(3),
-                Row(
-                  children: [
-                    Text(
-                      '19.99\$',
-                      style: Styles.textStyle120.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Spacer(),
-                    Bookrating(),
-                  ],
-                ),
-              ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: SizedBox(
+        height: 140,
+        child: Row(
+          children: [
+            AspectRatio(
+              aspectRatio: 3 / 3.7,
+              child: Image.asset(AssetsData.testImage),
             ),
-          ),
-        ],
+            Gap(20),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'The Jungle Book',
+                    style: Styles.textStyle120.copyWith(
+                      fontFamily: kSectrafine,
+                    ),
+                  ),
+                  Gap(3),
+                  Text(
+                    'Rudyard Kipling',
+                    style: Styles.textStyle114.copyWith(color: Colors.grey),
+                  ),
+                  Gap(3),
+                  Row(
+                    children: [
+                      Text(
+                        '19.99\$',
+                        style: Styles.textStyle120.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Spacer(),
+                      Bookrating(),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
