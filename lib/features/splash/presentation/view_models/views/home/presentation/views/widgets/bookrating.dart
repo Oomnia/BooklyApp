@@ -7,14 +7,16 @@ class Bookrating extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Row(children: [Icon(Icons.star, color: Colors.amber),
-                    Gap(6.3),
-                    Text('4.8', style: Styles.textStyle16),
-                    Gap(5),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(Icons.star, color: Colors.amber, size: 18),
+        Gap(6.3),
+        Text('4.8', style: Styles.textStyle16),
+        Gap(5),
 
-                    Text(
-                      '(2390)',
-                      style: Styles.textStyle114.copyWith(color: Colors.grey),
-                    ),],);
+        Text('(2390)', style: Styles.textStyle114.copyWith(color: Colors.grey)),
+      ],
+    );
   }
 }
