@@ -7,9 +7,9 @@ class ListviewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 6.0),
+      padding: const EdgeInsets.symmetric(horizontal: 5.0),
       child: AspectRatio(
-        aspectRatio: 2 / 3.3,
+        aspectRatio: 2 / 3.2,
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
