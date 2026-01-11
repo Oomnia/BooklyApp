@@ -6,18 +6,14 @@ import 'package:go_router/go_router.dart';
 
 abstract class AppRoutes {
   static final router = GoRouter(
-  routes: [
-    GoRoute(
-      path: '/',
-      builder: (context, state) => SplashView(),
-    ),
-    GoRoute(path: '/homeView',
-    builder: (context, state) => HomeView(),),
-    GoRoute(path: '/bookDetailsView',
-    builder: (context, state) => BookDetailsView()),
-     GoRoute(path: '/seachView',
-    builder: (context, state) => SearchView())
-  ],
-);
-
+    routes: [
+      GoRoute(path: '/', builder: (context, state) => SplashView()),
+      GoRoute(path: '/homeView', builder: (context, state) => HomeView()),
+      GoRoute(
+        path: '/bookDetailsView',
+        builder: (context, state) => BookDetailsView(),
+      ),
+      GoRoute(path: '/seachView', builder: (context, state) => SearchView()),
+    ],
+  );
 }

@@ -6,13 +6,11 @@ class SearchResults extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     return Expanded(
-       child: ListView.builder(
+    return Expanded(
+      child: ListView.builder(
         itemBuilder: (context, index) => const BestsellerItem(),
         itemCount: 10,
-           ),
-     );
+      ),
+    );
   }
 }
-
-  
