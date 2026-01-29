@@ -6,21 +6,23 @@ class ListviewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 5.0),
-      child: AspectRatio(
-        aspectRatio: 2 / 3.2,
-        child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(AssetsData.testImage),
-              fit: BoxFit.fill,
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5.0),
+            child: AspectRatio(
+              aspectRatio: 2 / 3.2,
+              child: Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(AssetsData.testImage),
+                    fit: BoxFit.fill,
+                  ),
+                  borderRadius: BorderRadius.circular(12),
+                  color: Colors.red,
+                ),
+              ),
             ),
-            borderRadius: BorderRadius.circular(12),
-            color: Colors.red,
-          ),
-        ),
-      ),
-    );
+          );
+       
+      }
   }
-}
+
