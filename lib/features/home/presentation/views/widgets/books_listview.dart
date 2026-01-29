@@ -11,22 +11,19 @@ class BooksListview extends StatelessWidget {
     return BlocBuilder<BooksListviewCubit, BooksListviewState>(
       builder: (context, state) {
         if (state is BooksListviewSuccess) {
-  return SizedBox(
-    height: MediaQuery.of(context).size.height * 0.31,
-  
-    child: ListView.builder(
-      scrollDirection: Axis.horizontal,
-      itemBuilder: (context, index) => ListviewItem(),
-    ),
-  );
-}else if (state is BooksListviewFailure) {
-          return Center(
-            child: Text(state.errMessage),
+          return SizedBox(
+            height: MediaQuery.of(context).size.height * 0.31,
+
+            child: ListView.builder(
+              itemCount: state.books.length,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) => ListviewItem(imageUrl: state.books[index].volumeInfo?.imageLinks?.thumbnail ?? ''),
+            ),
           );
-      } else {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
+        } else if (state is BooksListviewFailure) {
+          return Center(child: Text(state.errMessage));
+        } else {
+          return const Center(child: CircularProgressIndicator());
         }
       },
     );

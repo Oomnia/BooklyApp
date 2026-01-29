@@ -20,7 +20,9 @@ class BookDetailsSection extends StatelessWidget {
         CustomBookdetailsAppbar(),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.2),
-          child: ListviewItem(),
+          child: ListviewItem(
+            imageUrl: 'https://share.google/LcCh7C1Me6lzrZCm6',
+          ),
         ),
         Gap(35),
         Center(
